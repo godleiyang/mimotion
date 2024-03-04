@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11,需要repo和workflow权限
+          token: ${{ secrets.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 }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11,需要repo和workflow权限
       - name: random cron
         run: |
           sed -i -E "s/(- cron: ')[0-9]+( [^[:space:]]+ \* \* \*')/\1$(($RANDOM % 59))\2/g" .github/workflows/run.yml
